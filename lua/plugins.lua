@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
     use 'projekt0n/github-nvim-theme'
     use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
-    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' } 
+    use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
     use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' }        -- buffer auto-completion
     use { 'hrsh7th/cmp-path', after = 'nvim-cmp' }          -- path auto-completion
     use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' }       -- cmdline auto-completion
@@ -73,6 +73,26 @@ return require('packer').startup(function(use)
     end
   }
 use "elihunter173/dirbuf.nvim"
+ use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
+
+use {'m4xshen/autoclose.nvim',
+    config = function()
+        require('autoclose').setup()
+    end
+}
+use {
+  'smoka7/hop.nvim',
+  tag = '*', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+  end
+}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
