@@ -59,7 +59,6 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
-    use 'mhartington/formatter.nvim'
   use {
     "folke/which-key.nvim",
     config = function()
@@ -93,6 +92,16 @@ use {
     require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   end
 }
+use({
+  "roobert/tailwindcss-colorizer-cmp.nvim",
+  -- optionally, override the default options:
+  config = function()
+    require("tailwindcss-colorizer-cmp").setup({
+      color_square_width = 2,
+    })
+  end
+})
+use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

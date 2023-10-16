@@ -33,7 +33,7 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 -- copilot
 vim.g.copilot_assume_mapped = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap("i", "<C-a>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
 
 -- telescope
 vim.keymap.set("n", "<Space>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
