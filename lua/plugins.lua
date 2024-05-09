@@ -40,7 +40,9 @@ return require('packer').startup(function(use)
     ---------------------------------------
     -- NOTE: PUT YOUR THIRD PLUGIN HERE --
     ---------------------------------------
-    use 'projekt0n/github-nvim-theme'
+    --use 'projekt0n/github-nvim-theme'
+
+use { "catppuccin/nvim", as = "catppuccin" }
     use { 'neovim/nvim-lspconfig' }
     use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }    
     use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
@@ -59,6 +61,14 @@ return require('packer').startup(function(use)
         -- or                            , branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+
+    use({
+    "stevearc/oil.nvim",
+    config = function()
+      require("oil").setup()
+    end,
+  })
+
   use {
     "folke/which-key.nvim",
     config = function()
@@ -71,13 +81,6 @@ return require('packer').startup(function(use)
       }
     end
   }
-use "elihunter173/dirbuf.nvim"
- use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
-}
 
 use {'m4xshen/autoclose.nvim',
     config = function()
